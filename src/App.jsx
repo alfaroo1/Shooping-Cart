@@ -4,6 +4,7 @@ import {products as initialProducts} from "./mocks/products.json"
 import { Header } from "./components/Header";
 import Footer from "./components/Footer";
 import { useFilter } from "./hooks/useFilter.js";
+import Cart from "./components/Cart.jsx";
 
 
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <Header/>
+      <Cart/>
       <Porduct products={prodcutsFilter}/>
       <Footer/>
     </>
