@@ -1,20 +1,22 @@
 import { useState, useId } from "react"
 import "./Filter.css"
-export function Filter({onChange}) {
+import { useFilter } from "../hooks/useFilter.js";
+export function Filter() {
+    const {filter,setFilter} = useFilter();
     const [rangPrice, setRangPrice] = useState(0);
     const priceFilterId = useId();
     const categoryFilterId = useId();
 
     const handelPirce = (event) =>{
         setRangPrice(event.target.value)
-        onChange(newState => ({
+        setFilter(newState => ({
             ...newState,
             price: event.target.value
         }))
     }
 
     const handelCategory = (event) =>{
-        onChange(newState => ({
+        setFilter(newState => ({
             ...newState,
             category: event.target.value
         }))
